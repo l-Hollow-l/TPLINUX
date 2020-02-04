@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\CRA7\Desktop\Hiver2020\Programmation système\TP1\TP1\ArbreBinaire.h(285): warning C4715: 'ArbreBinaire<int>::Minimum': not all control paths return a value
+C:\Users\CRA7\Desktop\Hiver2020\Programmation système\TP1\TP1\ArbreBinaire.h(299): warning C4715: 'ArbreBinaire<int>::Maximum': not all control paths return a value
+  TP1.vcxproj -> C:\Users\CRA7\Desktop\Hiver2020\Programmation système\TP1\Debug\TP1.exe
