@@ -16,7 +16,7 @@ private:
 
 	void AfficherCroissant2(Noeud* n);
 	void AfficherDecroissant2(Noeud* n);
-	void Enlever2(Noeud* n, const T& valeur);
+	void Destruction(Noeud* root);
 public:
 	ArbreBinaire();
 	~ArbreBinaire();
@@ -80,40 +80,18 @@ void ArbreBinaire<T>::AfficherDecroissant2(Noeud* n)
 }
 
 template<class T>
-void ArbreBinaire<T>::Enlever2(Noeud* root, const T& valeur)
+void ArbreBinaire<T>::Destruction(Noeud* root)
 {
-	
-	
-		
-
-
-		/*if (root->gauche == NULL && root->droite == NULL)
-		{
-			delete root; 
-			root = NULL;
-		}
-		 if (root->gauche == NULL)
-		{
-			Noeud* temp = root;
-			root = root->droite;
-			delete temp;
-		}
-		else if (root->droite == NULL)
-		{
-			Noeud* temp = root;
-			root = root->gauche;
-			delete temp;
-		}
-		else
-		{
-			Noeud* temp = root->droite;
-			root->valeur = temp->valeur;
-			Enlever2(root->droite, temp->valeur);
-		}
-	else
+	if (root != NULL)
 	{
-		std::cout << "Arbre vide" << std::endl;
-	}*/
+		if (root->gauche != NULL)		
+			Destruction(root->gauche);
+		if(root->droite != NULL)
+			Destruction(root->droite);
+
+		std::cout << "Deleted : " << root->valeur << std::endl;
+		delete root;		
+	}
 }
 
 template <class T>
@@ -125,6 +103,7 @@ template <class T>
 
 ArbreBinaire<T>::~ArbreBinaire()
 {
+	Destruction(m_début);
 }
 template <class T>
 
